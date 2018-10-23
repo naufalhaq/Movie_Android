@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "72581854506",
+    "firebase_url": "https://movie-faf34.firebaseio.com",
+    "project_id": "movie-faf34",
+    "storage_bucket": "movie-faf34.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:72581854506:android:bfba1687b3e1ba0c",
+        "android_client_info": {
+          "package_name": "com.example.salsa.movie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "72581854506-nc4g1psekn90mtj46abl0skfe2t8ead4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.salsa.movie",
+            "certificate_hash": "f7722aa84f8b1e7c61d1ea0e6ceb3546053875c3"
+          }
+        },
+        {
+          "client_id": "72581854506-fh3tpst19ha6glth7ajivjuvnocpdq9v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCO3pQKFdkTu0WE2n5q6WnSQ8bfvaO_wPw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "72581854506-fh3tpst19ha6glth7ajivjuvnocpdq9v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
