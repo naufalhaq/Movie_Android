@@ -43,7 +43,7 @@ public class Emojifier {
         Bitmap resultBitmap = image;
 
         if (faces.size() == 0) {
-            //Toast.makeText(context, R.string.no_faces_message, Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "no_faces_message", Toast.LENGTH_SHORT).show();
         } else {
             for (int i = 0; i < faces.size(); i++) {
                 Face face = faces.valueAt(i);
@@ -91,7 +91,7 @@ public class Emojifier {
 
                     default:
                         emojiBitmap = null;
-                        //Toast.makeText(context, R.string.no_emoji, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "no_emoji", Toast.LENGTH_SHORT).show();
                 }
 
                 // Add the emojiBitmap to the proper position in the original image

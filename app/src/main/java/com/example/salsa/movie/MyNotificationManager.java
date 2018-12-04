@@ -29,9 +29,6 @@ public class MyNotificationManager {
         Intent resultIntent = new Intent(mCtx, MainActivity.class);
 
         PendingIntent pendingIntent = PendingIntent.getActivity(mCtx, 0, resultIntent, PendingIntent.FLAG_ONE_SHOT);
-//        //memanggil textview dari mainactivity untuk notif
-//        MainActivity.judul = title;
-//        MainActivity.deskripsi = body;
 
         Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
