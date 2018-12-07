@@ -1,5 +1,6 @@
 package com.example.salsa.movie;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -26,9 +27,9 @@ public class FilmDetailFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.activity_film_detail_fragment, container, false);
 
+        // Inflate the layout for this fragmentreturn inflater.inflate(R.layout.activity_film_detail_fragment, container, false);
+        return inflater.inflate(R.layout.activity_film_detail_fragment, container, false);
 
     }
 
@@ -38,8 +39,9 @@ public class FilmDetailFragment extends Fragment{
 
     @Override
     public void onStart() {
+
         super.onStart();
-        View view = getView();
+        final View view = getView();
         if (view != null) {
             TextView tittle = (TextView) view.findViewById(R.id.textJudul);
             final Film film = Film.filmfilm[(int) filmId];
@@ -63,6 +65,15 @@ public class FilmDetailFragment extends Fragment{
 
                 }
             });
+            Button button = (Button) view.findViewById(R.id.trailer);
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(view.getContext(),ListFilm.class);
+                    startActivity(i);
+                }
+            });
         }
+
     }
 }
