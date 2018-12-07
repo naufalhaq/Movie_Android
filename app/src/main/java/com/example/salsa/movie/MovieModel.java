@@ -4,11 +4,11 @@ public class MovieModel {
 
     private String nama, durasi, videoRawId;
 
-    public static final MovieModel[] drama = {
+    public static final MovieModel[] film = {
 
             new MovieModel("Wonder Woman", "05:12", "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"),
-            new MovieModel("Aquaman", "02:51", "aquaman"),
-            new MovieModel("Batman", "02:51", "batman"),
+//            new MovieModel("Aquaman", "02:51", "aquaman"),
+//            new MovieModel("Batman", "02:51", "batman"),
     };
 
     //nama, deskripsi dan gambar

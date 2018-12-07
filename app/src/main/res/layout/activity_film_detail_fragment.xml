@@ -20,7 +20,7 @@
         <ImageView
             android:id="@+id/gambar_film"
             android:layout_width="200dp"
-            android:layout_height="300dp"
+            android:layout_height="200dp"
             android:layout_below="@+id/textJudul"/>
 
         <ImageView
@@ -29,7 +29,7 @@
             android:layout_marginLeft="200dp"
             android:layout_below="@id/textJudul"
             android:layout_width="200dp"
-            android:layout_height="300dp" />
+            android:layout_height="200dp" />
 
         <TextView
             android:id="@+id/textDetail"
@@ -39,6 +39,36 @@
             android:text="Detail Film"
             android:textColor="@color/colorBlack"
             android:layout_below="@+id/proses"/>
+
+        <VideoView
+            android:id="@+id/videoView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/textJudul"/>
+        <TextView
+            android:id="@+id/textLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignTop="@+id/videoView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="91dp"
+            android:layout_marginBottom="84dp"
+            android:text="Loading..."
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/videoView"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="0dp" />
 
         <Button
             android:layout_below="@id/gambar_film"

@@ -28,10 +28,11 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-        
+
         <activity android:name=".Main2Activity" />
         <activity android:name=".DetailActivity" />
         <activity android:name=".FilmDetailFragment" />
+        <activity android:name=".ListFilm"></activity>
     </application>
 
 </manifest>
