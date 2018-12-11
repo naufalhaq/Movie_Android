@@ -6,9 +6,11 @@ public class MovieModel {
 
     public static final MovieModel[] film = {
 
-            new MovieModel("Wonder Woman", "05:12", "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"),
-//            new MovieModel("Aquaman", "02:51", "aquaman"),
-//            new MovieModel("Batman", "02:51", "batman"),
+            new MovieModel("Black Panther", "05:12", "https://www.youtube.com/watch?v=VSB4wGIdDwo"),
+            new MovieModel("Captain America", "02:51", "https://www.youtube.com/watch?v=dKrVegVI0Us"),
+            new MovieModel("Deadpool", "02:51", "https://www.youtube.com/watch?v=ONHBaC-pfsk"),
+            new MovieModel("Iron Man", "02:51", "https://www.youtube.com/watch?v=Ke1Y3P9D0Bc"),
+            new MovieModel("Thor", "02:51", "https://www.youtube.com/watch?v=ue80QwXMRHg"),
     };
 
     //nama, deskripsi dan gambar
