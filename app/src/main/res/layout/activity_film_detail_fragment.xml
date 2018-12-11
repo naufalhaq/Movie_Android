@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,12 +13,36 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
+        <VideoView
+            android:id="@+id/videoView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            />
+
+        <TextView
+            android:id="@+id/textLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textJudul"
+            android:layout_alignTop="@+id/videoView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="91dp"
+            android:layout_marginBottom="84dp"
+            android:text="Loading..."
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/textJudul"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-            android:text="Judul Film"/>
+            android:text="Judul Film"
+            android:layout_below="@+id/videoView"
+            />
 
         <ImageView
             android:id="@+id/gambar_film"
@@ -57,5 +84,7 @@
             android:layout_below="@+id/proses"
             />
 
+
     </RelativeLayout>
 </FrameLayout>
+</ScrollView>

@@ -1,22 +1,37 @@
 package com.example.salsa.movie;
 
+import android.app.Notification;
 import android.content.Intent;
+import android.media.MediaPlayer;
+import android.net.Uri;
+import android.util.Log;
+import android.webkit.URLUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.URLUtil;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Button;
+import android.widget.ListView;
+import android.widget.MediaController;
 import android.widget.TextView;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.widget.Toast;
+import android.widget.VideoView;
 
 import static com.example.salsa.movie.Film.filmfilm;
 
 
 public class FilmDetailFragment extends Fragment{
+
+    VideoView videoView;
+    TextView textLoading;
+
 
     private long filmId;
 
@@ -24,9 +39,11 @@ public class FilmDetailFragment extends Fragment{
         // Required empty public constructor
     }
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
 
         // Inflate the layout for this fragmentreturn inflater.inflate(R.layout.activity_film_detail_fragment, container, false);
         return inflater.inflate(R.layout.activity_film_detail_fragment, container, false);
@@ -36,6 +53,8 @@ public class FilmDetailFragment extends Fragment{
     public void setFilm(long id){
         this.filmId = id;
     }
+
+
 
     @Override
     public void onStart() {
@@ -48,9 +67,15 @@ public class FilmDetailFragment extends Fragment{
             tittle.setText(film.getNama_film());
             TextView detail = (TextView) view.findViewById(R.id.textDetail);
             detail.setText(film.getDetail_film());
+            VideoView video = (VideoView) view.findViewById(R.id.videoView);
+//            video.setVideoURI(film.getVideo());
+            TextView loadingText = (TextView) view.findViewById(R.id.textLoading);
+            loadingText.setVisibility(View.INVISIBLE);
             final ImageView gambar = (ImageView) view.findViewById(R.id.gambar_film);
             gambar.setImageResource(film.getGambar_());
             final ImageView myImageView = (ImageView) view.findViewById(R.id.imgview2);
+//            getMediaPlayer(getVideoFile("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"));
+
             Button btn = (Button) view.findViewById(R.id.proses);
             btn.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -75,5 +100,41 @@ public class FilmDetailFragment extends Fragment{
             });
         }
 
+    }
+
+    private Uri getVideoFile(String videoName)
+    {
+        if (URLUtil.isValidUrl(videoName))
+        {
+            Log.d("VIDEO",videoName);
+            return Uri.parse(videoName);
+        }
+        else {
+            Log.d("VIDEO","android.resource://" + "/raw/" + videoName);
+            return Uri.parse("android.resource://" + "/raw/" + videoName);
+        }
+    }
+
+    private void getMediaPlayer(Uri uri) {
+//        loadingText.setVisibility(View.VISIBLE);
+        videoView.setVideoURI(uri);
+        videoView.requestFocus();
+
+        videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+//                loadingText.setVisibility(View.INVISIBLE);
+                videoView.start();
+            }
+        });
+
+        videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+//                Toast.makeText(FilmDetailFragment.this, "The End", Toast.LENGTH_SHORT).show();
+//                finish();
+                videoView.seekTo(0);
+            }
+        });
     }
 }
