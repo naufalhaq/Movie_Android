@@ -19,18 +19,20 @@ public class NewAppWidget extends AppWidgetProvider {
     private static final String SHARE_PREF_FILE = "appwidgetku";
     private static final String COUNT_KEY = "count";
     private static final int lala =0;
+    public static int drawable = R.drawable.movie;
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId) {
 
+        //construct the remoteviews object
         SharedPreferences prefs = context.getSharedPreferences(SHARE_PREF_FILE,0);
         int count = prefs.getInt(COUNT_KEY + appWidgetId,0);
         count ++;
-        String dateString = DateFormat.getTimeInstance(DateFormat.SHORT).format(new Date());
+        //String dateString = DateFormat.getTimeInstance(DateFormat.SHORT).format(new Date());
         // Construct the RemoteViews object
+
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.new_app_widget);
-        views.setTextViewText(R.id.appwidget_id, String.valueOf(appWidgetId));
-        views.setTextViewText(R.id.appwidget_update,context.getResources().getString(R.string.date_count_format,count,dateString));
-        views.setImageViewResource(R.id.icon,R.drawable.example_appwidget_preview);
+        NewAppWidget lala = new NewAppWidget();
+        lala.setFilm(count);
         //menyimpan kembali ke sharedpred
         SharedPreferences.Editor predEditor = prefs.edit();
         predEditor.putInt(COUNT_KEY + appWidgetId,count);
@@ -68,6 +70,33 @@ public class NewAppWidget extends AppWidgetProvider {
     @Override
     public void onDisabled(Context context) {
         // Enter relevant functionality for when the last widget is disabled
+    }
+
+    private void  setFilm(int currentPlace){
+        int drawableId= -1;
+//ganti icon
+        switch (currentPlace){
+            case 1:
+                drawableId = R.drawable.black;
+                break;
+            case 2:
+                drawableId = R.drawable.captain;
+                break;
+            case 3:
+                drawableId = R.drawable.deadpool;
+                break;
+            case 4:
+                drawableId = R.drawable.iron;
+                break;
+            case 5:
+                drawableId = R.drawable.thoro;
+                break;
+        }
+
+        if(drawableId < 0){
+            drawableId = R.drawable.warning;
+        }
+        drawable=drawableId;
     }
 }
 
