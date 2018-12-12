@@ -71,9 +71,11 @@ public class FilmDetailFragment extends Fragment{
 //            video.setVideoURI(film.getVideo());
             TextView loadingText = (TextView) view.findViewById(R.id.textLoading);
             loadingText.setVisibility(View.INVISIBLE);
+//            final ImageView gambar = (ImageView) view.findViewById(R.id.gambar_film);
+//            gambar.setImageResource(film.getGambar_());
             final ImageView gambar = (ImageView) view.findViewById(R.id.gambar_film);
             gambar.setImageResource(film.getGambar_());
-            final ImageView myImageView = (ImageView) view.findViewById(R.id.imgview2);
+//            final ImageView myImageView = (ImageView) view.findViewById(R.id.imgview2);
             getMediaPlayer(getVideoFile(film.getVideo()));
 
 //            Button btn = (Button) view.findViewById(R.id.proses);

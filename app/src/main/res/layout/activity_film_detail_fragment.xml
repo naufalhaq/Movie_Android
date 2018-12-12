@@ -43,22 +43,25 @@
             android:layout_height="wrap_content"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
             android:text="Judul Film"
+            android:fontFamily="@font/delius"
             android:layout_below="@+id/videoView"
             />
 
-        <ImageView
-            android:id="@+id/gambar_film"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_below="@+id/textDetail"/>
 
-        <ImageView
 
-            android:id="@+id/imgview2"
-            android:layout_marginLeft="200dp"
-            android:layout_below="@id/textDetail"
-            android:layout_width="200dp"
-            android:layout_height="200dp" />
+        <!--<ImageView-->
+            <!--android:id="@+id/gambar_film"-->
+            <!--android:layout_width="200dp"-->
+            <!--android:layout_height="200dp"-->
+            <!--android:layout_below="@+id/textDetail"/>-->
+
+        <!--<ImageView-->
+
+            <!--android:id="@+id/imgview2"-->
+            <!--android:layout_marginLeft="200dp"-->
+            <!--android:layout_below="@id/textDetail"-->
+            <!--android:layout_width="200dp"-->
+            <!--android:layout_height="200dp" />-->
 
         <TextView
             android:id="@+id/textDetail"
@@ -67,7 +70,18 @@
             android:layout_marginTop="10dp"
             android:text="Detail Film"
             android:textColor="@color/colorBlack"
-            android:layout_below="@+id/textJudul" />
+            android:layout_below="@+id/gambar_film"
+            />
+
+        <br.com.felix.imagezoom.ImageZoom
+            android:id="@+id/gambar_film"
+            android:adjustViewBounds="true"
+            android:layout_centerHorizontal="true"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="10dp"
+            android:layout_width="300dp"
+            android:layout_height="170dp"
+            android:layout_below="@id/textJudul"/>
 
         <!--<Button-->
             <!--android:layout_below="@id/gambar_film"-->

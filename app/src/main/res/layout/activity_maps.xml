@@ -18,9 +18,12 @@
         android:orientation="vertical">
         <Button
             android:id="@+id/btnCinema"
+            android:fontFamily="@font/cartoonist"
+            android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:text="Refresh" />
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:text="Cari Bioskop Terdekat" />
     </RelativeLayout>
 </FrameLayout>

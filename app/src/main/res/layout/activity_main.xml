@@ -19,6 +19,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="START TO SHOW NEW FILM"
+        android:fontFamily="@font/delius"
+        android:textStyle="bold"
+        android:textSize="8pt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -37,15 +40,21 @@
         android:layout_below="@+id/txtwelcome"
         android:layout_centerInParent="true"
         android:layout_marginTop="20dp"
-        android:id="@+id/btnStart"/>
+        android:fontFamily="@font/cartoonist"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:id="@+id/btnStart"
+        android:textStyle="bold"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cari Bioskop Terdekat"
+        android:fontFamily="@font/cartoonist"
+        android:textStyle="bold"
         android:layout_below="@+id/btnStart"
         android:layout_centerInParent="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:id="@+id/btnLokasi"/>
 
 </RelativeLayout>
