@@ -31,15 +31,15 @@ Class yang memuat method unuk mengirimkan pesan dan mendapatkan token serta fung
 -	MyNotificationManager.java
 Class yang berfungsi membuat tampilan notifikasi pada fungsi onReceiveMessage.
 -MapsActivity
-Class yang menghandel semua proses mendapatkan lokasi
+Class yang menghandel semua proses mendapatkan lokasi.
 -DownloadUrl
-Class yang membuat koneksi http untuk berkomunikasi dengan URL
+Class yang membuat koneksi http untuk berkomunikasi dengan URL.
 -DataParser
-Class yang menghandel JSON dari Maps
+Class yang menghandel JSON dari Maps.
 -GetNearbyPlacesData
-Class yang menghandel data nearby maps
+Class yang menghandel data nearby maps.
 -NewAppWidget
-Class yang berfungsi untuk membuat widget aplikasi
+Class yang berfungsi untuk membuat widget aplikasi.
 
 
 ## Referensi
