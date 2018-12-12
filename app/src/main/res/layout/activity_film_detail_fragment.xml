@@ -69,22 +69,22 @@
             android:textColor="@color/colorBlack"
             android:layout_below="@+id/textJudul" />
 
-        <Button
-            android:layout_below="@id/gambar_film"
-            android:layout_centerHorizontal="true"
-            android:id="@+id/proses"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="PROSES"/>
+        <!--<Button-->
+            <!--android:layout_below="@id/gambar_film"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:id="@+id/proses"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="PROSES"/>-->
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:id="@+id/trailer"
-            android:text="trailer"
-            android:layout_below="@+id/proses"
-            />
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:id="@+id/trailer"-->
+            <!--android:text="trailer"-->
+            <!--android:layout_below="@+id/proses"-->
+            <!--/>-->
 
 
     </RelativeLayout>

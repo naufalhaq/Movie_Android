@@ -67,37 +67,37 @@ public class FilmDetailFragment extends Fragment{
             tittle.setText(film.getNama_film());
             TextView detail = (TextView) view.findViewById(R.id.textDetail);
             detail.setText(film.getDetail_film());
-            VideoView video = (VideoView) view.findViewById(R.id.videoView);
+            videoView = (VideoView) view.findViewById(R.id.videoView);
 //            video.setVideoURI(film.getVideo());
             TextView loadingText = (TextView) view.findViewById(R.id.textLoading);
             loadingText.setVisibility(View.INVISIBLE);
             final ImageView gambar = (ImageView) view.findViewById(R.id.gambar_film);
             gambar.setImageResource(film.getGambar_());
             final ImageView myImageView = (ImageView) view.findViewById(R.id.imgview2);
-//            getMediaPlayer(getVideoFile("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"));
+            getMediaPlayer(getVideoFile(film.getVideo()));
 
-            Button btn = (Button) view.findViewById(R.id.proses);
-            btn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                    Emojifier emoji = new Emojifier();
-                    BitmapFactory.Options options = new BitmapFactory.Options();
-                    options.inMutable=true;
-
-                    Bitmap myBitmap = BitmapFactory.decodeResource(v.getContext().getResources(),film.getGambar_(), options);
-                    myImageView.setImageBitmap(emoji.detectFaces(v.getContext(), myBitmap));
-
-                }
-            });
-            Button button = (Button) view.findViewById(R.id.trailer);
-            button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent i = new Intent(view.getContext(),ListFilm.class);
-                    startActivity(i);
-                }
-            });
+//            Button btn = (Button) view.findViewById(R.id.proses);
+//            btn.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//
+//                    Emojifier emoji = new Emojifier();
+//                    BitmapFactory.Options options = new BitmapFactory.Options();
+//                    options.inMutable=true;
+//
+//                    Bitmap myBitmap = BitmapFactory.decodeResource(v.getContext().getResources(),film.getGambar_(), options);
+//                    myImageView.setImageBitmap(emoji.detectFaces(v.getContext(), myBitmap));
+//
+//                }
+//            });
+//            Button button = (Button) view.findViewById(R.id.trailer);
+//            button.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    Intent i = new Intent(view.getContext(),ListFilm.class);
+//                    startActivity(i);
+//                }
+//            });
         }
 
     }
@@ -110,8 +110,8 @@ public class FilmDetailFragment extends Fragment{
             return Uri.parse(videoName);
         }
         else {
-            Log.d("VIDEO","android.resource://" + "/raw/" + videoName);
-            return Uri.parse("android.resource://" + "/raw/" + videoName);
+            Log.d("VIDEO","android.resource://" + getActivity().getPackageName() +"/raw/" + videoName);
+            return Uri.parse("android.resource://" + getActivity().getPackageName() + "/raw/" + videoName);
         }
     }
 
@@ -119,6 +119,10 @@ public class FilmDetailFragment extends Fragment{
 //        loadingText.setVisibility(View.VISIBLE);
         videoView.setVideoURI(uri);
         videoView.requestFocus();
+
+        MediaController mc = new MediaController(getContext());
+        videoView.setMediaController(mc);
+        mc.setAnchorView(videoView);
 
         videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
