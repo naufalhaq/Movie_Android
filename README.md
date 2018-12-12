@@ -30,15 +30,15 @@ Class pertama yang mengarah pada Main2Activity.java.
 Class yang memuat method unuk mengirimkan pesan dan mendapatkan token serta fungsi onMessageReceive untuk menerima pesan.
 -	MyNotificationManager.java
 Class yang berfungsi membuat tampilan notifikasi pada fungsi onReceiveMessage.
--MapsActivity
+- MapsActivity
 Class yang menghandel semua proses mendapatkan lokasi.
--DownloadUrl
+- DownloadUrl
 Class yang membuat koneksi http untuk berkomunikasi dengan URL.
--DataParser
+- DataParser
 Class yang menghandel JSON dari Maps.
--GetNearbyPlacesData
+- GetNearbyPlacesData
 Class yang menghandel data nearby maps.
--NewAppWidget
+- NewAppWidget
 Class yang berfungsi untuk membuat widget aplikasi.
 
 
